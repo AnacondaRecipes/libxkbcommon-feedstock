@@ -20,7 +20,7 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}
-    - {{ compiler('cxx') }}
+    - {{ cdt('libxau-devel') }}
     - meson
     - ninja
     - m4
@@ -28,8 +28,6 @@ requirements:
     - cmake
     - pkg-config
   host:
-    - xorg-libxau
-    - {{ cdt('xorg-x11-proto-devel') }}
     - libxcb
     - xorg-xproto
     - xcb-proto
