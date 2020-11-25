@@ -1,5 +1,5 @@
 {% set name = "libxkbcommon" %}
-{% set version = "0.10.0" %}
+{% set version = "1.0.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/xkbcommon/{{ name }}/archive/xkbcommon-{{ version }}.tar.gz
-  sha256: 9b4635cf5d9fc0fb9611ceec1780aafc0944299e9a29ab09c18ec2633923b9c3
+  sha256: 270e2ad4ce5699f633e49042114cb68a5697fa1ed45b65c1d96a833cfac20954
 
 build:
   number: 0
@@ -29,6 +29,7 @@ requirements:
     - pkg-config
   host:
     - libxcb
+    - libxml2
     - xorg-xproto
     - xcb-proto
     - pthread-stubs
