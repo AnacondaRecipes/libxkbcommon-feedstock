@@ -10,9 +10,10 @@ source:
   sha256: 270e2ad4ce5699f633e49042114cb68a5697fa1ed45b65c1d96a833cfac20954
 
 build:
-  number: 0
-  skip: true  # [win or osx]
+  number: 1
+  skip: true  # [win or s390x or ppc64le or osx]
   missing_dso_whitelist:
+    - "*/libc.so.6"
     - /lib/libc.so.6
   run_exports:
     - {{ pin_subpackage('libxkbcommon') }}
