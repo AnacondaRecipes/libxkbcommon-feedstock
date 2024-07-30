@@ -41,7 +41,7 @@ test:
 
 about:
   home: https://github.com/xkbcommon/libxkbcommon
-  license: X11
+  license: MIT AND X11
   license_family: MIT
   license_file: LICENSE
   summary: 'keymap handling library for toolkits and window systems'
