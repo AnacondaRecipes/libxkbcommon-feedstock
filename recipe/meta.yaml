@@ -10,7 +10,7 @@ source:
   sha256: 270e2ad4ce5699f633e49042114cb68a5697fa1ed45b65c1d96a833cfac20954
 
 build:
-  number: 1
+  number: 2
   # xorg-xproto missing on s390x,
   skip: true  # [win or osx or (linux and (s390x or ppc64le))]
   missing_dso_whitelist:
@@ -30,7 +30,7 @@ requirements:
     - pkg-config
   host:
     - libxcb
-    - libxml2 2.10
+    - libxml2 {{ libxml2 }}
     - xorg-xproto
     - xcb-proto
     - pthread-stubs
@@ -41,7 +41,7 @@ test:
 
 about:
   home: https://github.com/xkbcommon/libxkbcommon
-  license: MIT/X11 Derivative
+  license: MIT AND X11
   license_family: MIT
   license_file: LICENSE
   summary: 'keymap handling library for toolkits and window systems'
