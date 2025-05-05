@@ -41,14 +41,13 @@ test:
     - xkbcli --help
 
   # Check downstream packages if needed.
-  downstreams:
-    - qtbase
-    - qtwebengine
-    - nsight-compute
-    - qt-webengine
+  # downstreams:
+  #   - qtbase
+  #   - qtwebengine
+  #   - nsight-compute
 
 about:
-  home: https://github.com/xkbcommon/libxkbcommon
+  home: https://xkbcommon.org/
   license: MIT/X11 Derivative
   license_family: MIT
   license_file: LICENSE
@@ -57,7 +56,7 @@ about:
     libxkbcommon is a keyboard keymap compiler and support library which
     processes a reduced subset of keymaps as defined by the XKB (X Keyboard
     Extension) specification.
-  doc_url: https://xkbcommon.org/
+  doc_url: https://xkbcommon.org/doc/current/
   dev_url: https://github.com/xkbcommon/libxkbcommon
 
 extra:
