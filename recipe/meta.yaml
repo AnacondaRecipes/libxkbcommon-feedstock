@@ -31,7 +31,7 @@ requirements:
     - xorg-xorgproto
     - xcb-proto
     - pthread-stubs
-    - libxml2
+    - libxml2 {{ libxml2 }}
   run:
     - xkeyboard-config
 
