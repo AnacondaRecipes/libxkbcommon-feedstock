@@ -1,5 +1,5 @@
 {% set name = "libxkbcommon" %}
-{% set version = "1.0.1" %}
+{% set version = "1.9.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,21 +7,18 @@ package:
 
 source:
   url: https://github.com/xkbcommon/{{ name }}/archive/xkbcommon-{{ version }}.tar.gz
-  sha256: 270e2ad4ce5699f633e49042114cb68a5697fa1ed45b65c1d96a833cfac20954
+  sha256: 763b914c4779e9579ab4d06caffff39cc8f43a1c126ec3b7a2f920bf9817097b
 
 build:
-  number: 2
-  # xorg-xproto missing on s390x,
-  skip: true  # [win or osx or (linux and (s390x or ppc64le))]
-  missing_dso_whitelist:
-    - /lib/libc.so.6
+  number: 0
+  skip: true  # [win or osx]
   run_exports:
     - {{ pin_subpackage('libxkbcommon') }}
 
 requirements:
   build:
     - {{ compiler('c') }}
-    - {{ cdt('libxau-devel') }}
+    - {{ compiler('cxx') }}
     - meson
     - ninja
     - m4
@@ -29,29 +26,40 @@ requirements:
     - cmake
     - pkg-config
   host:
+    - xorg-libxau
     - libxcb
-    - libxml2 {{ libxml2 }}
-    - xorg-xproto
+    - xorg-xorgproto
     - xcb-proto
     - pthread-stubs
+    - libxml2 {{ libxml2 }}
+  run:
+    - xkeyboard-config
 
 test:
   commands:
     - test -f "${PREFIX}/lib/libxkbcommon${SHLIB_EXT}"
+    - xkbcli --help
+
+  # Check downstream packages if needed.
+  # downstreams:
+  #   - qtbase
+  #   - qtwebengine
+  #   - nsight-compute
 
 about:
-  home: https://github.com/xkbcommon/libxkbcommon
+  home: https://xkbcommon.org/
   license: MIT AND X11
   license_family: MIT
   license_file: LICENSE
-  summary: 'keymap handling library for toolkits and window systems'
+  summary: keymap handling library for toolkits and window systems
   description: |
     libxkbcommon is a keyboard keymap compiler and support library which
     processes a reduced subset of keymaps as defined by the XKB (X Keyboard
     Extension) specification.
-  doc_url: https://xkbcommon.org/
+  doc_url: https://xkbcommon.org/doc/current/
   dev_url: https://github.com/xkbcommon/libxkbcommon
 
 extra:
   recipe-maintainers:
     - scopatz
+    - hmaarrfk
