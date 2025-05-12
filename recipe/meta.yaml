@@ -10,7 +10,7 @@ source:
   sha256: 763b914c4779e9579ab4d06caffff39cc8f43a1c126ec3b7a2f920bf9817097b
 
 build:
-  number: 0
+  number: 2
   skip: true  # [win or osx]
   run_exports:
     - {{ pin_subpackage('libxkbcommon') }}
@@ -37,9 +37,8 @@ requirements:
 
 test:
   commands:
-    - test -f "${PREFIX}/lib/libxkbcommon${SHLIB_EXT}"
+    - "test -f \"${PREFIX}/lib/libxkbcommon${SHLIB_EXT}\""
     - xkbcli --help
-
   # Check downstream packages if needed.
   # downstreams:
   #   - qtbase
