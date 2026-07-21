@@ -31,7 +31,7 @@ requirements:
   host:
     - xorg-libxau {{ xorg_libxau }}
     - libxcb {{ libxcb }}
-    - xorg-xorgproto {{ xorg-xorgproto }}
+    - xorg-xorgproto {{ xorg_xorgproto }}
     - libxml2 {{ libxml2 }}
     - xkeyboard-config ==2.44
   run:
