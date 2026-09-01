@@ -33,7 +33,7 @@ requirements:
     - libxcb {{ libxcb }}
     - xorg-xorgproto {{ xorg_xorgproto }}
     - libxml2 {{ libxml2 }}
-    - xkeyboard-config ==2.44
+    - xkeyboard-config ==2.48
   run:
     - xkeyboard-config
 
