@@ -53,7 +53,7 @@ about:
   license: MIT AND X11
   license_family: MIT
   license_file: LICENSE
-  summary: keymap handling library for toolkits and window systems
+  summary: keymap handling library for toolkits and window systems.
   description: |
     libxkbcommon is a keyboard keymap compiler and support library which
     processes a reduced subset of keymaps as defined by the XKB (X Keyboard
