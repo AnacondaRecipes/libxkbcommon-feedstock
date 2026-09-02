@@ -12,7 +12,7 @@ source:
     - 0001-fix-undeclared-macros.patch
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win or osx]
   run_exports:
     - {{ pin_subpackage('libxkbcommon') }}
@@ -33,7 +33,7 @@ requirements:
     - libxcb {{ libxcb }}
     - xorg-xorgproto {{ xorg_xorgproto }}
     - libxml2 {{ libxml2 }}
-    - xkeyboard-config ==2.44
+    - xkeyboard-config ==2.48
   run:
     - xkeyboard-config
 
@@ -53,7 +53,7 @@ about:
   license: MIT AND X11
   license_family: MIT
   license_file: LICENSE
-  summary: keymap handling library for toolkits and window systems
+  summary: keymap handling library for toolkits and window systems.
   description: |
     libxkbcommon is a keyboard keymap compiler and support library which
     processes a reduced subset of keymaps as defined by the XKB (X Keyboard
@@ -65,3 +65,5 @@ extra:
   recipe-maintainers:
     - scopatz
     - hmaarrfk
+  skip-lints:
+    - python_build_tools_in_host
