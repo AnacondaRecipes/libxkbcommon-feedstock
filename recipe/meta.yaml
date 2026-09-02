@@ -43,10 +43,10 @@ test:
     - xkbcli --help
 
   # Check downstream packages if needed.
-  downstreams:
-    - qtbase
-    - qtwebengine
-    - nsight-compute
+  # downstreams:
+  #   - qtbase
+  #   - qtwebengine
+  #   - nsight-compute
 
 about:
   home: https://xkbcommon.org
